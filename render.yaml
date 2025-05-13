@@ -2,6 +2,9 @@ services:
   - type: web
     name: todo-list
     env: java
-    buildCommand: "./mvnw clean install"
-    startCommand: "java -jar target/*.jar"
+    buildCommand: "./mvnw clean package"
+    startCommand: "java -jar target/todolist-1.0.0.jar"
     plan: free
+    envVars:
+      - key: JAVA_VERSION
+        value: 17
